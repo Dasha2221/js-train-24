@@ -1,6 +1,21 @@
 console.log("Завдання: 8 ==============================");
 
 function task8() {
+  function fetchFakeData(data) {
+    return Promise.resolve(data);
+  }
+  const fakeData = { name: "John", age: 30 };
+  Promise.resolve(fakeData);
+  const promise = Promise.resolve(fakeData);
+  fetchFakeData();
+
+  promise
+    .then((data) => {
+      console.log("Дані з fetchFakeData:", data);
+    })
+    .catch((error) => {
+      console.error("Помилка в fetchFakeData:", error);
+    });
   // Створюємо функцію fetchFakeData, яка симулює запит до сервера та повертає "дані" через Promise.resolve().
   // Створюємо fakeData константу з данними { name: "John",age: 30}
   // Використовуємо Promise.resolve(fakeData) для того, щоб створити вже зарезолвлений проміс.
